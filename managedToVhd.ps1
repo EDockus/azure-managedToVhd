@@ -92,6 +92,6 @@ function Convertfrom-Managed
     {        
         Write-Verbose "Copying $diskNameDest. Bytes copied: $status.BytesCopied. Remaining bytes to copy: $($status.TotalBytes - $status.BytesCopied)"
         Start-Sleep -Seconds 10
-        $status=Get-AzureStorageBlobCopyState -Context $storageContext -Blob $diskNameDest -Container vhds -ErrorAction Stop
+        $status=Get-AzureStorageBlobCopyState -Context $storageContext -Blob $diskNameDest -Container $container -ErrorAction Stop
     }
 }
